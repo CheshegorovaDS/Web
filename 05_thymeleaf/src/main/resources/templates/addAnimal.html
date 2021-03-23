@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Animal</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+    <h1>Create an Animal:</h1>
+
+    <form th:action="@{/addAnimal}"
+          th:object="${animalForm}" method="POST">
+        Name:
+        <input type="text" th:field="*{name}" />
+        <br/>
+        Category:
+        <input type="text" th:field="*{category}" />
+        <br/>
+        <input type="submit" value="Create" />
+    </form>
+
+    <br/>
+
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;">
+         ...
+    </div>
+</body>
+</html>

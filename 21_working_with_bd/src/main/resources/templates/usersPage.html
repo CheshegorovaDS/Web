@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users List</title>
+
+    <style>
+th, td {
+    padding: 5px;
+}
+</style>
+
+</head>
+
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/menu"></th:block>
+
+<h2>Users</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Date</th>
+    </tr>
+    <tr th:each="userInfo : ${userInfos}">
+        <td th:utext="${userInfo.id}">..</td>
+        <td th:utext="${userInfo.phone}">..</td>
+        <td th:utext="${userInfo.email}">..</td>
+        <td th:utext="${userInfo.date}">..</td>
+    </tr>
+
+</table>
+</body>
+</html>

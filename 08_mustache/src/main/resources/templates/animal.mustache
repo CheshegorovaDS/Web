@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Spring Boot Mustache</title>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid #999;
+    padding: 5px;
+}
+</style>
+</head>
+<body>
+    <h2>Animals</h2>
+    <table>
+        <tr>
+            <th>Animal id</th>
+            <th>Animal name</th>
+            <th>Animal category</th>
+            <th>Animal age</th>
+        </tr>
+
+        {{#animals}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{category}}</td>
+            <td>{{age}}</td>
+        </tr>
+        {{/animals}}
+
+    </table>
+</body>
+</html>

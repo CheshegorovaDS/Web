@@ -1,6 +1,7 @@
 package ru.omsu.imit.novikova._working_with_bd.model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class UserInfo {
 
@@ -49,5 +50,21 @@ public class UserInfo {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserInfo)) return false;
+        UserInfo userInfo = (UserInfo) o;
+        return id == userInfo.id &&
+                Objects.equals(phone, userInfo.phone) &&
+                Objects.equals(email, userInfo.email) &&
+                Objects.equals(date, userInfo.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, phone, email, date);
     }
 }

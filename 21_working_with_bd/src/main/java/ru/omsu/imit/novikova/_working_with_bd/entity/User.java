@@ -1,14 +1,17 @@
 package ru.omsu.imit.novikova._working_with_bd.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
 @Table(name="USER")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = -5527566248002296042L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private int id;
 

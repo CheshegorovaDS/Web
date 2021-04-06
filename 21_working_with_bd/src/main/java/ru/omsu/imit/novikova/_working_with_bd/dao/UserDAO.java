@@ -2,6 +2,7 @@ package ru.omsu.imit.novikova._working_with_bd.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,9 +37,9 @@ public class UserDAO {
     }
 
     public List<UserInfo> listUserInfo() {
-        String sql = "Select id from " + User.class.getName();
+        String sql = "SELECT * FROM USER";
         Session session = this.sessionFactory.getCurrentSession();
-        Query query = session.createQuery(sql);
+        Query query = session.createNativeQuery(sql);
         return query.getResultList();
     }
 

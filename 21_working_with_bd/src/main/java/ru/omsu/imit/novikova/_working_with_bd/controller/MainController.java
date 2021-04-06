@@ -1,5 +1,6 @@
 package ru.omsu.imit.novikova._working_with_bd.controller;
 
+import java.sql.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.omsu.imit.novikova._working_with_bd.dao.UserDAO;
+import ru.omsu.imit.novikova._working_with_bd.entity.User;
 import ru.omsu.imit.novikova._working_with_bd.model.UserInfo;
 
 @Controller
@@ -17,8 +19,12 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showUsers(Model model) {
-        List<UserInfo> list = userDAO.listUserInfo();
+        List<UserInfo> list = userDAO.listUserInfo();//из-за этого
+//        UserInfo uI = (UserInfo)list.get(0);
+//        String phone = uI.getPhone();
 
+        list.clear();
+        list.add(new UserInfo(3, "lddkld", "lkdokod", new Date(16176897770L)));
         model.addAttribute("userInfos", list);
 
         return "usersPage";

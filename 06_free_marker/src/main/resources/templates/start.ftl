@@ -1,5 +1,4 @@
-<#import "/spring.ftl" as spring/>
-
+<#import "start.ftl" as start/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +14,5 @@
     <h2>${message}</h2>
     </#if>
 
-    <a href="<@spring.url '/listAnimal'/>">Animal List</a>
 </body>
 </html>

@@ -1,5 +1,4 @@
-<#import "/spring.ftl" as spring/>
-
+<#import "addAnimal.ftl" as addAnimal/>
 <!DOCTYPE html>
 <html>
 <head>

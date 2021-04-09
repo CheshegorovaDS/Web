@@ -1,4 +1,4 @@
-package ru.omsu.imit.novikova._free_marker.freemarker;
+package ru.omsu.imit.novikova._free_marker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

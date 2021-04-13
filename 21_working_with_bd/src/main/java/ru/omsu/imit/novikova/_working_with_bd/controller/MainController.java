@@ -21,7 +21,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showUsers(Model model) {
-        List<Object[]> list = userDAO.listUserInfo();//из-за этого
+        List<Object[]> list = userDAO.listUserInfo();
         List<UserInfo> users = new ArrayList();
         list.forEach(user -> {
             int id = (int) user[0];

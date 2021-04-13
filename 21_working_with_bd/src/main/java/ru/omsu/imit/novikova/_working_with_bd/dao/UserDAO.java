@@ -42,15 +42,4 @@ public class UserDAO {
         Query query = session.createNativeQuery(sql);
         return query.getResultList();
     }
-
-    // MANDATORY: Transaction must be created before.
-    @Transactional(propagation = Propagation.MANDATORY)
-    public void addUser(int id, String phone, String email, Date date) throws UserException {
-        User user = this.findByPhone(phone);
-        if (user != null) {
-            throw new UserException("User with the same phone already exist " + id);
-        }
-
-    }
-
 }

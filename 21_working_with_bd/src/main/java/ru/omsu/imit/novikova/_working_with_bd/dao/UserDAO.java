@@ -36,7 +36,7 @@ public class UserDAO {
         return session.get(User.class, phone);
     }
 
-    public List<UserInfo> listUserInfo() {
+    public List<Object[]> listUserInfo() {
         String sql = "SELECT * FROM USER";
         Session session = this.sessionFactory.getCurrentSession();
         Query query = session.createNativeQuery(sql);

@@ -42,4 +42,13 @@ public class UserDAO {
         Query query = session.createNativeQuery(sql);
         return query.getResultList();
     }
+
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void changeUserPhone(String oldPhone, String newPhone) throws UserException {
+        User user = this.findByPhone(oldPhone);
+        if (user != null) {
+            throw new UserException("User with the same phone already exist " + oldPhone);
+        }
+        user.setPhone(newPhone);
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.omsu.imit.novikova._working_with_bd.dao.UserDAO;
+import ru.omsu.imit.novikova._working_with_bd.entity.User;
 import ru.omsu.imit.novikova._working_with_bd.exception.UserException;
 import ru.omsu.imit.novikova._working_with_bd.form.ChangePhoneForm;
 import ru.omsu.imit.novikova._working_with_bd.model.UserInfo;
